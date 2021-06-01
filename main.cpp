@@ -23,13 +23,19 @@ int main()
 	{
 		for (int j = 1; j < 9; ++j)
 		{
-			cout << matrix[i][j] << " ";
+			int n = matrix[i][j];
+			cout << n << " ";
 		}
 
 		cout << endl;
 	}
 
 	cout << "Size = " << matrix.Size() << endl;
+
+	for (auto c : matrix)
+	{
+		cout << "[" << matrix.GetX(c.first) << ", " << matrix.GetY(c.first) << "] = " << c.second << endl;
+	}
 
 	return 0;
 }

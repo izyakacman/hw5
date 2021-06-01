@@ -5,15 +5,70 @@
 
 using namespace std;
 
+template<typename T>
+using matrix_iterator = typename map<size_t, T>::iterator;
+
 template<typename T, T def>
-class MatrixMap
+class MatrixValue
 {
 public:
-	MatrixMap() = default;
-	~MatrixMap() = default;
+	MatrixValue() = default;
+	~MatrixValue() = default;
+
+	T& operator=(const T& other)
+	{
+		if (other == def)
+		{
+			if (m_map.find(m_index) != m_map.cend())
+			{
+				m_map.erase(m_index);
+			}
+
+			return m_default_lvalue;
+		}
+
+		m_map[m_index] = other;
+
+		return m_map[m_index];
+	}
+
+	operator T()
+	{
+		if (m_map.find(m_index) != m_map.cend())
+		{
+			return m_map[m_index];
+		}
+		else
+		{
+			return def;
+		}
+	}
+
+	void SetIndex(size_t index)
+	{
+		m_index = index;
+	}
+
+	size_t Size()
+	{
+		return m_map.size();
+	}
+	
+	matrix_iterator<T> begin()
+	{
+		return m_map.begin();
+	}
+
+	matrix_iterator<T> end()
+	{
+		return m_map.end();
+	}
 
 private:
 
+	map<size_t, T> m_map;
+	T m_default_lvalue = def;
+	size_t m_index = 0;
 };
 
 
@@ -25,54 +80,40 @@ public:
 	SubMatrix() = default;
 	~SubMatrix() = default;
 
-	T& operator[](int index)
-	{
-		//cout << m_index << " " << index << endl;
-
-		m_index = m_index * 10 + index;
-
-		return m_map[m_index];
-	}
-/*
-	const T& operator[](int index) const
+	MatrixValue<T, def>& operator[](int index)
 	{
 		m_index = m_index * 10 + index;
 
-		if (m_map.find(m_index) == m_map.cend())
-			return def;
-		else
-			return m_map[m_index];
+		m_value.SetIndex(m_index);
+
+		return m_value;
 	}
-	*/
-/*
-	T& operator=(const T& other)
-	{
-		if (other == def)
-		{
-			if (m_map.find(m_index) != m_map.cend())
-				m_map.erase(m_index);
-		}
-		else
-		{
-			m_map[]
-		}
-	}
-*/
+
 	size_t Size()
 	{
-		return m_map.size();
+		return m_value.Size();
 	}
 
-	void SetIndex(int index)
+	void SetIndex(size_t index)
 	{
 		m_index = index;
 	}
 
+	matrix_iterator<T> begin()
+	{
+		return m_value.begin();
+	}
+
+	matrix_iterator<T> end()
+	{
+		return m_value.end();
+	}
+
 private:
 
-	int m_index = 0;
-	int def_value = def;
-	map<int, T> m_map;
+	size_t m_index = 0;
+	size_t def_value = def;
+	MatrixValue<T, def> m_value;
 };
 
 template<typename T, T def>
@@ -82,7 +123,7 @@ public:
 	Matrix() = default;
 	~Matrix() = default;
 
-	SubMatrix<T, def>& operator[](int index)
+	SubMatrix<T, def>& operator[](size_t index)
 	{
 		m_sub_matrix.SetIndex(index);
 
@@ -92,6 +133,26 @@ public:
 	size_t Size()
 	{
 		return m_sub_matrix.Size();
+	}
+
+	matrix_iterator<T> begin()
+	{
+		return m_sub_matrix.begin();
+	}
+
+	matrix_iterator<T> end()
+	{
+		return m_sub_matrix.end();
+	}
+
+	static size_t GetX(size_t complex_idndex)
+	{
+		return complex_idndex / 10;
+	}
+
+	static size_t GetY(size_t complex_idndex)
+	{
+		return complex_idndex % 10;
 	}
 
 private:
