@@ -1,17 +1,28 @@
+/**
+*	Модуль работы с бесконечной матрицой
+* 
+*	Храним значения в ассоациативном массиве map<size_t, T>,
+*	где ключ key = i*10+j, например
+*	Matrix[1][2] -> map[12]
+* 
+*/
+
 #pragma once
 
 #include <iostream>
 #include <map>
 
-using namespace std;
-
 template<typename T>
-using matrix_iterator = typename map<size_t, T>::iterator;
+using matrix_iterator = typename std::map<size_t, T>::iterator;
 
+/**
+*	Элемент матрицы
+*/
 template<typename T, T def>
 class MatrixValue
 {
 public:
+
 	MatrixValue() = default;
 	~MatrixValue() = default;
 
@@ -66,12 +77,14 @@ public:
 
 private:
 
-	map<size_t, T> m_map;
+	std::map<size_t, T> m_map;
 	T m_default_lvalue = def;
 	size_t m_index = 0;
 };
 
-
+/**
+*	Вспомогательная матрица
+*/
 template<typename T, T def>
 class SubMatrix
 {
@@ -112,10 +125,12 @@ public:
 private:
 
 	size_t m_index = 0;
-	size_t def_value = def;
 	MatrixValue<T, def> m_value;
 };
 
+/**
+*	Бесконечная матрица
+*/
 template<typename T, T def>
 class Matrix
 {
@@ -160,4 +175,3 @@ private:
 	SubMatrix<T, def> m_sub_matrix;
 
 };
-

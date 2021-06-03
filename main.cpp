@@ -1,5 +1,6 @@
-﻿// hw5.cpp: определяет точку входа для приложения.
-//
+﻿/**
+*	main.cpp: определяет точку входа для приложения.
+*/
 
 #include <iostream>
 
@@ -19,6 +20,9 @@ int main()
 		matrix[i][9 - i] = 9 - i;
 	}
 
+	(matrix[11][11] = 0) = 111;
+	matrix[0][0] = 0;
+
 	for (int i = 1; i < 9; ++i)
 	{
 		for (int j = 1; j < 9; ++j)
@@ -30,7 +34,7 @@ int main()
 		cout << endl;
 	}
 
-	cout << "Size = " << matrix.Size() << endl;
+	cout << "Matrix size = " << matrix.Size() << endl;
 
 	for (auto c : matrix)
 	{
