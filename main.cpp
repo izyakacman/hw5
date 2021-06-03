@@ -20,9 +20,6 @@ int main()
 		matrix[i][9 - i] = 9 - i;
 	}
 
-	(matrix[11][11] = 0) = 111;
-	matrix[0][0] = 0;
-
 	for (int i = 1; i < 9; ++i)
 	{
 		for (int j = 1; j < 9; ++j)
