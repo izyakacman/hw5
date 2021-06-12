@@ -11,6 +11,12 @@
 #include <vector>
 #include <map>
 
+template<typename T>
+using matrix_iterator = typename std::map<std::vector<size_t>, T>::iterator;
+
+template<typename T>
+using matrix_const_iterator = typename std::map<std::vector<size_t>, T>::const_iterator;
+
 /**
 *	Endless matrix
 */
@@ -21,12 +27,6 @@ public:
 
 	Matrix() = default;
 	~Matrix() = default;
-
-	template<typename T>
-	using matrix_iterator = typename std::map<typename std::vector<size_t>, T>::iterator;
-
-	template<typename T>
-	using matrix_const_iterator = typename std::map<typename std::vector<size_t>, T>::const_iterator;
 
 	Matrix<T, def>& operator[](size_t index)
 	{
