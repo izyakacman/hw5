@@ -1,5 +1,5 @@
 ﻿/**
-*	main.cpp: определяет точку входа для приложения.
+*	main.cpp
 */
 
 #include <iostream>
@@ -35,7 +35,7 @@ int main()
 
 	for (auto c : matrix)
 	{
-		cout << "[" << matrix.GetX(c.first) << ", " << matrix.GetY(c.first) << "] = " << c.second << endl;
+		cout << "[" << c.first[0] << ", " << c.first[1] << "] = " << c.second << endl;
 	}
 
 	return 0;

@@ -8,6 +8,11 @@ project (matrix  VERSION 0.0.$ENV{GITHUB_RUN_NUMBER})
 # Добавьте источник в исполняемый файл этого проекта.
 add_executable (matrix "main.cpp"  "matrix.h")
 
+set_target_properties(matrix PROPERTIES
+CXX_STANDARD 17
+CXX_STANDARD_REQUIRED ON
+)
+
 # TODO: Добавьте тесты и целевые объекты, если это необходимо.
 
 install(TARGETS matrix RUNTIME DESTINATION bin)
