@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['getx_60',['GetX',['../class_matrix.html#ab5edc113d3900a137ab5b287c5c70d2d',1,'Matrix']]],
-  ['gety_61',['GetY',['../class_matrix.html#acbff25f18bc6cca4b961cddc4bf2c2e4',1,'Matrix']]]
+  ['main_56',['main',['../_c_make_c_compiler_id_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCXXCompilerId.cpp'],['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
+  ['matrix_57',['Matrix',['../class_matrix.html#ae902150b618c9b6adc123c7dd372a455',1,'Matrix']]]
 ];

@@ -68,16 +68,16 @@ $(function() {
 <div class="title">matrix.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<div class="textblock"><code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for matrix.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="matrix_8h__incl.png" border="0" usemap="#amatrix_8h" alt=""/></div>
 <map name="amatrix_8h" id="amatrix_8h">
-<area shape="rect" title=" " alt="" coords="49,5,116,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,77,107"/>
-<area shape="rect" title=" " alt="" coords="102,80,149,107"/>
+<area shape="rect" title=" " alt="" coords="40,5,107,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,64,107"/>
+<area shape="rect" title=" " alt="" coords="89,80,135,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -94,22 +94,21 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_value.html">MatrixValue&lt; T, def &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sub_matrix.html">SubMatrix&lt; T, def &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html">Matrix&lt; T, def &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:adb276c71c5abd031b9211c403109ef38"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:adb276c71c5abd031b9211c403109ef38"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="matrix_8h.html#adb276c71c5abd031b9211c403109ef38">matrix_iterator</a> = typename std::map&lt; size_t, T &gt;::iterator</td></tr>
-<tr class="separator:adb276c71c5abd031b9211c403109ef38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa06d974577181b6df465a94104372268"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa06d974577181b6df465a94104372268"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="matrix_8h.html#aa06d974577181b6df465a94104372268">matrix_iterator</a> = typename std::map&lt; std::vector&lt; size_t &gt;, T &gt;::iterator</td></tr>
+<tr class="separator:aa06d974577181b6df465a94104372268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb592a700876adc7b85a40aa0a5b94b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aafb592a700876adc7b85a40aa0a5b94b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="matrix_8h.html#aafb592a700876adc7b85a40aa0a5b94b">matrix_const_iterator</a> = typename std::map&lt; std::vector&lt; size_t &gt;, T &gt;::const_iterator</td></tr>
+<tr class="separator:aafb592a700876adc7b85a40aa0a5b94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="adb276c71c5abd031b9211c403109ef38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb276c71c5abd031b9211c403109ef38">&#9670;&nbsp;</a></span>matrix_iterator</h2>
+<a id="aafb592a700876adc7b85a40aa0a5b94b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb592a700876adc7b85a40aa0a5b94b">&#9670;&nbsp;</a></span>matrix_const_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -117,12 +116,28 @@ Typedefs</h2></td></tr>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="matrix_8h.html#adb276c71c5abd031b9211c403109ef38">matrix_iterator</a> =  typename std::map&lt;size_t, T&gt;::iterator</td>
+          <td class="memname">using <a class="el" href="matrix_8h.html#aafb592a700876adc7b85a40aa0a5b94b">matrix_const_iterator</a> =  typename std::map&lt;std::vector&lt;size_t&gt;, T&gt;::const_iterator</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Модуль работы с бесконечной матрицой</p>
-<p>Храним значения в ассоациативном массиве map&lt;size_t, T&gt;, где ключ key = i*10+j, например <a class="el" href="class_matrix.html">Matrix</a>[1][2] -&gt; map[12] </p>
+
+</div>
+</div>
+<a id="aa06d974577181b6df465a94104372268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa06d974577181b6df465a94104372268">&#9670;&nbsp;</a></span>matrix_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="matrix_8h.html#aa06d974577181b6df465a94104372268">matrix_iterator</a> =  typename std::map&lt;std::vector&lt;size_t&gt;, T&gt;::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Endles matrix of T type elements</p>
+<p>Save matrix's values in the map&lt;vector&lt;size_t&gt;, T&gt;, where vector&lt;size_t&gt; is the matrix index </p>
 
 </div>
 </div>
