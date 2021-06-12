@@ -23,10 +23,10 @@ public:
 	~Matrix() = default;
 
 	template<typename T>
-	using matrix_iterator = typename std::map<std::vector<size_t>, T>::iterator;
+	using matrix_iterator = typename std::map<typename std::vector<size_t>, T>::iterator;
 
 	template<typename T>
-	using matrix_const_iterator = typename std::map<std::vector<size_t>, T>::const_iterator;
+	using matrix_const_iterator = typename std::map<typename std::vector<size_t>, T>::const_iterator;
 
 	Matrix<T, def>& operator[](size_t index)
 	{
@@ -37,7 +37,7 @@ public:
 
 	T& operator=(const T& other)
 	{
-		vector<size_t> tmp_index_vector = std::move(m_index_vector);
+		std::vector<size_t> tmp_index_vector = std::move(m_index_vector);
 		m_index_vector.clear();
 
 		if (other == def)
