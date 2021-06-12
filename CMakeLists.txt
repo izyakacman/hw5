@@ -3,7 +3,7 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project (matrix)#  VERSION 0.0.$ENV{GITHUB_RUN_NUMBER})
+project (matrix VERSION 0.0.$ENV{GITHUB_RUN_NUMBER})
 
 # Добавьте источник в исполняемый файл этого проекта.
 add_executable (matrix "main.cpp"  "matrix.h")
