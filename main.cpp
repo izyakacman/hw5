@@ -33,9 +33,19 @@ int main()
 
 	cout << "Matrix size = " << matrix.Size() << endl;
 
-	for (auto c : matrix)
+	for (const auto& c : matrix)
 	{
-		cout << "[" << c.first[0] << ", " << c.first[1] << "] = " << c.second << endl;
+		cout << "[";
+
+		for (int i = 0; i < c.first.size(); ++i)
+		{
+			cout << c.first[i];
+
+			if(i < c.first.size()-1)
+				cout << ", ";
+		}
+		
+		cout << "] = " << c.second << endl;
 	}
 
 	return 0;
